@@ -27,7 +27,8 @@ The designs were created to the following widths:
 
 ### Fonts
 
-- Family: [Nunito Sans](https://fonts.google.com/specimen/Nunito+Sans)
+- Family: [Nunito Sans](https://fonts.google. 
+com/specimen/Nunito+Sans)
 - Weights: 300, 600, 800
 
 ## Icons
