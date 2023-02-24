@@ -8,42 +8,84 @@
 body {
   max-width: 1440px;
   font-family: "Space Mono", monospace;
+  background-color: hsl(0deg, 0%, 98%);
 }
 
 header {
   display: flex;
   justify-content: space-between;
   text-align: center;
-  padding: 40px 80px;
+  padding: 20px 60px;
+  border-bottom: solid 5px hsl(0deg, 0%, 98%);
+  margin-bottom: 15px;
+  background-color: white;
+  box-shadow: 4px 2px 2px 2px #aaaaaa;
 }
 header h1 {
   font-size: 26px;
   font-weight: 800;
 }
-header div {
-  display: flex;
-  text-align: center;
+header div span, header div i {
+  vertical-align: sub;
 }
 
 .container {
-  border: solid red 2px;
   height: 80vh;
   width: 90%;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
+  padding: 15px;
 }
 .container .search {
-  border: solid green 2px;
   display: flex;
   justify-content: space-between;
   width: 100%;
-  padding: 15px;
+  padding: 15px 0;
 }
-.container .search:first-child {
+.container .search .box {
+  width: 400px;
+  height: 40px;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  box-shadow: 1px 2px 2px 2px #aaaaaa;
+}
+.container .search .box i {
+  font-size: 16px;
+  color: #777;
+}
+.container .search .box input {
+  flex: 1;
+  height: 40px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  padding-left: 10px;
+}
+.container .search select {
+  width: 400px;
+  height: 40px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 1px 2px 2px 2px #aaaaaa;
+  outline: none;
+  border: none;
+}
+.container .search #select-continent {
+  width: 150px;
   padding: 10px;
-  background-color: black;
 }
 .container .countries {
   width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.container .countries .country {
+  border: solid red 2px;
+  height: 150px;
+  width: 20%;
 }/*# sourceMappingURL=main.css.map */

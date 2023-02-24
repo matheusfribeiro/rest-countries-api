@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
 
+$color-primary:hsl(0, 0%, 98%);
+
 * {
   margin: 0;
   padding: 0;
@@ -9,6 +11,7 @@
 body {
   max-width: 1440px;
   font-family: 'Space Mono', monospace;
+  background-color: hsl(0, 0%, 98%);
   
 }
 
@@ -16,7 +19,11 @@ header {
   display: flex;
   justify-content: space-between;
   text-align: center;
-  padding: 40px 80px;
+  padding: 20px 60px;
+  border-bottom: solid 5px $color-primary;
+  margin-bottom: 15px;
+  background-color: white;
+  box-shadow: 4px 2px 2px 2px #aaaaaa;
 
   h1 {
     font-size: 26px;
@@ -24,35 +31,93 @@ header {
   }
 
   div {
-    display: flex;
-    text-align: center;
-    
+    span, i {
+      vertical-align: sub;
+    }
   }
+
+  
 }
 
 .container {
-  border: solid red 2px;
+  
   height: 80vh;
   width: 90%;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
+  padding: 15px;
 
   .search {
-    border: solid green 2px;
+    
     display: flex;
     justify-content: space-between;
     width: 100%;
-    padding: 15px;
+    padding: 15px 0;
 
-    &:first-child {
+    .box {
+      width: 400px;
+      height: 40px;
+      background-color: white;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      padding: 20px;
+      box-shadow: 1px 2px 2px 2px #aaaaaa;
+
+      i {
+        font-size: 16px;
+        color: #777;
+
+      }
+
+      input {
+        flex: 1;
+        height: 40px;
+        border: none;
+        outline: none;
+        font-size: 16px;
+        padding-left: 10px;
+      }
+
+
+    }
+
+    select {
+      width: 400px;
+      height: 40px;
+      background-color: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 1px 2px 2px 2px #aaaaaa;
+      outline: none;
+      border: none;
+    }
+
+    
+
+    #select-continent {
+      width: 150px;
       padding: 10px;
-      background-color: black;
+      
     }
     
   }
 
   .countries {
     width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    
+
+    .country {
+      border: solid red 2px;
+      height: 150px;
+      width: 20%;
+      
+      
+    }
+
+
   }
 }
