@@ -1,20 +1,18 @@
-let http = new XMLHttpRequest()
+const countryDiv = document.querySelector('.countries')
 
-http.open('get', 'data.json', true)
+import countries from './data.json' assert {type: 'json'}
 
-http.send()
+countries.forEach((country) => {
+  const {name, population, region, capital} = country
 
-http.onload = function() {
-
-  if (this.readyState == 4 && this.status == 200) {
-    let countries = JSON.parse(this.responseText)
-
-    let output = ''
-
-    for (let country of countries) {
-      
-    }
-  }
-
-
-}
+  countryDiv.innerHTML += `
+      <div class ="country">
+        <div class="flag"></div>
+        <div class="info">
+        <h5>${name}</h5>
+        <p>Population: ${population}</p>
+        <p>Region: ${region}</p>
+        <p>Capital: ${capital}</p>
+      </div>
+  `
+})

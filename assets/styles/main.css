@@ -88,7 +88,8 @@ header div span, header div i {
 }
 .container .countries .country {
   border: solid red 2px;
-  height: 250px;
+  height: 260px;
+  width: 250px;
 }
 .container .countries .country .flag {
   width: 100%;
