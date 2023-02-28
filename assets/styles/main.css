@@ -9,6 +9,10 @@ body {
   max-width: 1440px;
   background-color: hsl(0deg, 0%, 98%);
 }
+body.dark-mode {
+  background-color: hsl(207deg, 26%, 17%);
+  color: white;
+}
 
 header {
   display: flex;
@@ -21,11 +25,19 @@ header {
   box-shadow: 4px 2px 2px 2px #aaaaaa;
   font-family: "Space Mono", monospace;
 }
+header.dark-mode {
+  background-color: hsl(209deg, 23%, 22%);
+  box-shadow: none;
+  border-bottom: 0;
+}
 header h1 {
   font-size: 26px;
   font-weight: 800;
 }
-header div span, header div i {
+header .dark-button {
+  cursor: pointer;
+}
+header .dark-button span, header .dark-button i {
   vertical-align: sub;
 }
 
@@ -42,6 +54,9 @@ header div span, header div i {
   justify-content: space-between;
   width: 100%;
   padding: 15px 0;
+}
+.container .search .inputs.dark-mode {
+  background-color: hsl(209deg, 23%, 22%);
 }
 .container .search .box {
   width: 400px;
@@ -64,6 +79,9 @@ header div span, header div i {
   outline: none;
   font-size: 16px;
   padding-left: 10px;
+}
+.container .search .box input.dark-mode {
+  background-color: hsl(209deg, 23%, 22%);
 }
 .container .search select {
   width: 400px;
@@ -107,7 +125,7 @@ header div span, header div i {
 .container .countries .country .info h5 {
   padding: 5px 0;
   font-family: "Space Mono", monospace;
-  font-weight: bolder;
+  font-size: 16px;
 }
 .container .countries .country .info p {
   display: inline-block;

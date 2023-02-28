@@ -1,8 +1,25 @@
-const countryList = document.querySelector('.countries')
-let searchInput = document.querySelector('#input-country')
-
 import countries from './data.json' assert {type: 'json'}
 
+const countryList = document.querySelector('.countries')
+const selectContinent = document.querySelector('#select-continent')
+const searchInput = document.querySelector('#input-country')
+const darkMode = document.querySelector('.dark-button')
+
+// DARK MODE 
+
+darkMode.addEventListener('click', () => {
+  let body = document.body
+  let header = document.querySelector('#header')
+  let selects = document.querySelectorAll('.inputs')
+
+  body.classList.toggle("dark-mode");
+  header.classList.toggle("dark-mode");
+  selects.classList.toggle("dark-mode")
+  
+})
+
+
+// LIST COUNTRIES
 countries.forEach((country) => {
   const {name, population, region, capital} = country
 
@@ -19,6 +36,8 @@ countries.forEach((country) => {
   
 })
 
+
+// FILTER COUNTRIES 
 searchInput.addEventListener('input', () => {
   const filter = searchInput.value.toLowerCase()
   const listCountries = document.querySelectorAll('.country')
@@ -33,6 +52,28 @@ searchInput.addEventListener('input', () => {
     
   })
 })
+
+
+// SELECT BY REGION
+
+selectContinent.addEventListener('change', function () {
+  const listCountries = document.querySelectorAll('.country')
+  const filter = this.value
+
+  listCountries.forEach((country) => {
+    let text = country.lastChild.previousSibling.childNodes[5].innerHTML
+    if(text.toLowerCase().includes(filter.toLowerCase())) {
+      country.style.display = ''
+    } else if (this.value === '') {
+      country.style.display = ''
+    } else {
+      country.style.display = 'none'
+    }
+    
+  })
+
+})
+
 
 
 
