@@ -6,7 +6,7 @@
 }
 
 body {
-  max-width: 1440px;
+  max-width: 1950px;
   background-color: hsl(0deg, 0%, 98%);
 }
 body.dark-mode {
@@ -48,6 +48,9 @@ header .dark-button span, header .dark-button i {
   flex-direction: column;
   margin: 0 auto;
   padding: 15px;
+}
+.container.hidden {
+  display: none;
 }
 .container .search {
   display: flex;
@@ -132,4 +135,20 @@ header .dark-button span, header .dark-button i {
   font-size: 14px;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   margin: 2px 0;
+}
+
+.country-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 30px;
+}
+.country-modal .modal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  width: 100%;
 }/*# sourceMappingURL=main.css.map */

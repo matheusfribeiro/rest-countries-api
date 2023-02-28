@@ -1,9 +1,10 @@
-import countries from './data.json' assert {type: 'json'}
-
 const countryList = document.querySelector('.countries')
 const selectContinent = document.querySelector('#select-continent')
 const searchInput = document.querySelector('#input-country')
 const darkMode = document.querySelector('.dark-button')
+
+
+
 
 // DARK MODE 
 
@@ -18,25 +19,24 @@ darkMode.addEventListener('click', () => {
   
 })
 
-
-// LIST COUNTRIES
-countries.forEach((country) => {
-  const {name, population, region, capital} = country
-
-  countryList.innerHTML += `
-      <div class ="country">
-        <img src="${country.flags.png}" class="flag"></img>
-        <div class="info">
-        <h5>${name}</h5>
-        <p><b>Population:</b> ${population}</p>
-        <p><b>Region:</b> ${region}</p>
-        <p><b>Capital:</b> ${capital}</p>
-      </div>
-  `
+const displayCountries = (countries) => {
   
-})
-
-
+  countries.forEach((country) => {
+    const {population, region, capital} = country
+  
+    countryList.innerHTML += `
+        <div class ="country">
+          <img src="${country.flags.png}" class="flag"></img>
+          <div class="info">
+          <h5>${country.name.common}</h5>
+          <p><b>Population:</b> ${population}</p>
+          <p><b>Region:</b> ${region}</p>
+          <p><b>Capital:</b> ${capital}</p>
+        </div>
+    `
+    
+  })
+}
 // FILTER COUNTRIES 
 searchInput.addEventListener('input', () => {
   const filter = searchInput.value.toLowerCase()
@@ -76,4 +76,16 @@ selectContinent.addEventListener('change', function () {
 
 
 
+const test = (arr) => {
+  console.log(arr)
+}
 
+
+const getCountries = async () => {
+  const data = await fetch('https://restcountries.com/v3.1/all')
+    .then(response => response.json())
+    .then(displayCountries)
+    
+}
+
+getCountries()
