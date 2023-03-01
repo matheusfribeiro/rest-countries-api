@@ -34,7 +34,9 @@ const displayCountries = (countries) => {
           <p><b>Capital:</b> ${capital}</p>
         </div>
     `
-    
+    countryList.addEventListener('click', () => {
+      showDetailedCountry(capital)
+    })
   })
 }
 // FILTER COUNTRIES 
@@ -74,17 +76,16 @@ selectContinent.addEventListener('change', function () {
 
 })
 
-
-
-const test = (arr) => {
-  console.log(arr)
-}
+const showDetailedCountry = (country) => {
+  console.log(country)
+} 
 
 
 const getCountries = async () => {
   const data = await fetch('https://restcountries.com/v3.1/all')
     .then(response => response.json())
     .then(displayCountries)
+    .then(showDetailedCountry)
     
 }
 
