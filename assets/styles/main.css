@@ -61,9 +61,6 @@ header .dark-button span, header .dark-button i {
   width: 100%;
   padding: 15px 0;
 }
-.container .search .inputs.dark-mode {
-  background-color: hsl(209, 23%, 22%);
-}
 .container .search .box {
   width: 400px;
   height: 40px;
@@ -73,6 +70,10 @@ header .dark-button span, header .dark-button i {
   align-items: center;
   padding: 20px;
   box-shadow: 1px 2px 2px 2px #aaaaaa;
+}
+.container .search .box.dark-mode {
+  background-color: hsl(209, 23%, 22%);
+  color: white;
 }
 .container .search .box i {
   font-size: 16px;
@@ -88,6 +89,7 @@ header .dark-button span, header .dark-button i {
 }
 .container .search .box input.dark-mode {
   background-color: hsl(209, 23%, 22%);
+  color: white;
 }
 .container .search select {
   width: 400px;
@@ -102,6 +104,10 @@ header .dark-button span, header .dark-button i {
 .container .search #select-continent {
   width: 150px;
   padding: 10px;
+}
+.container .search #select-continent.dark-mode {
+  background-color: hsl(209, 23%, 22%);
+  color: white;
 }
 .container .countries {
   margin-top: 10px;
@@ -128,6 +134,10 @@ header .dark-button span, header .dark-button i {
   flex-direction: column;
   background-color: white;
   border-radius: 0 0 1rem 1rem;
+}
+.container .countries .country .info.dark-mode {
+  background-color: hsl(209, 23%, 22%);
+  color: white;
 }
 .container .countries .country .info h5 {
   padding: 5px 0;
@@ -166,6 +176,10 @@ header .dark-button span, header .dark-button i {
   font-family: "Space Mono", monospace;
   cursor: pointer;
 }
+.country-modal .button button.dark-mode {
+  background-color: hsl(209, 23%, 22%);
+  color: white;
+}
 .country-modal .modal {
   display: flex;
   align-items: center;
@@ -187,10 +201,16 @@ header .dark-button span, header .dark-button i {
 .country-modal .modal .country-info #countryName {
   grid-column-start: 1;
   grid-column-end: 4;
+  padding: 0 15px;
 }
 .country-modal .modal .country-info .info-left {
   line-height: 30px;
+  padding: 15px;
 }
 .country-modal .modal .country-info .info-right {
   line-height: 30px;
+  padding: 15px;
+}
+.country-modal .modal .borders {
+  padding: 15px 28px;
 }/*# sourceMappingURL=main.css.map */

@@ -1,27 +1,15 @@
+import darkMode from "./darkMode.js"
+
+
 const countryList = document.querySelector('.countries')
 const selectContinent = document.querySelector('#select-continent')
 const searchInput = document.querySelector('#input-country')
-const darkMode = document.querySelector('.dark-button')
 const backBtn = document.querySelector('.button')
 const container = document.querySelector('.container')
 const countryModal = document.querySelector('.country-modal')
 const countryInfo = document.querySelector('.modal')
 
 
-
-
-// DARK MODE 
-
-darkMode.addEventListener('click', () => {
-  let body = document.body
-  let header = document.querySelector('#header')
-  let selects = document.querySelectorAll('.inputs')
-
-  body.classList.toggle("dark-mode");
-  header.classList.toggle("dark-mode");
-  selects.classList.toggle("dark-mode")
-
-})
 
 const displayCountries = (countries) => {
 
@@ -33,7 +21,7 @@ const displayCountries = (countries) => {
     countryList.innerHTML += `
         <div class ="country">
           <img src="${png}" class="flag"></img>
-          <div class="info">
+          <div id="info" class="info">
           <h5>${common}</h5>
           <p><b>Population:</b> ${population}</p>
           <p><b>Region:</b> ${region}</p>
@@ -99,31 +87,47 @@ const showDetailedCountry = (text, countries) => {
     
     
     if (countryName === text) {
-      //const countryNative = country.name.native.ell.official
-      const { population, region, subregion, capital, topLevelDomain, currencies, languages, flags: {png}  } = country
       
-      console.log(country, currencies)
-      const test = JSON.stringify(currencies)
-      console.log(test)
+      const { population, region, subregion, capital, currencies, languages, flags: {png}, name: {official, common}, timezones, tld, borders   } = country
+      console.log(country, borders)
+
+      for(var currency in currencies) {
+        if(currencies.hasOwnProperty(currency)) {
+            var currencyValue = currencies[currency];
+        }
+      }
+
+      for(var langName in languages) {
+        if(languages.hasOwnProperty(langName)) {
+            var langValue = languages[langName];        
+        }
+      }
+  
 
       countryInfo.innerHTML += `
       <div class="country-flag">
       <img src="${png}" alt="">
       </div>
+      <div>
       <div class="country-info">
-        <h1 id="countryName">${countryName}</h1>
+        <h1 id="countryName">${common}</h1>
         <div class="info-left">
-          <p><b>Native Name:</b> }</p>
+          <p><b>Native Name:</b>${official}</p>
           <p><b>Population:</b> ${population}</p>
           <p><b>Region:</b> ${region}</p>
           <p><b>Sub-Region:</b> ${subregion}</p>
           <p><b>Capital:</b> ${capital}</p>
         </div>
         <div class="info-right">
-          <p><b>Top Level Domain:</b> ${topLevelDomain}</p>
-          <p><b>Currencies:</b> </p>
-          <p><b>Languages:</b> ${languages}</p>
+          <p><b>Timezone:</b> ${timezones}</p>
+          <p><b>Top Level Domain:</b>${tld}</p>
+          <p><b>Currencies:</b> ${currencyValue.name}</p>
+          <p><b>Languages:</b> ${langValue}</p>
         </div>
+       
+      </div>
+     
+        <div class="borders"<p><b>Borders:</b>${borders}</p></div>
       </div>
       `
     }
@@ -135,7 +139,6 @@ backBtn.addEventListener("click", () => {
   countryModal.classList.toggle('hidden')
   countryInfo.innerHTML = ''
 })
-
 
 const getCountries = () => {
   fetch('https://restcountries.com/v3.1/all')

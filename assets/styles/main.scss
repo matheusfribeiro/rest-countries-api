@@ -82,12 +82,7 @@ header {
     width: 100%;
     padding: 15px 0;
 
-    .inputs {
-      &.dark-mode {
-        background-color: $color-secondary-dark;
-      }
-
-    }
+    
 
 
     .box {
@@ -99,6 +94,11 @@ header {
       align-items: center;
       padding: 20px;
       box-shadow: 1px 2px 2px 2px #aaaaaa;
+
+      &.dark-mode {
+        background-color: $color-secondary-dark;
+        color: white;
+      }
 
       
 
@@ -118,6 +118,7 @@ header {
 
         &.dark-mode {
           background-color: $color-secondary-dark;
+          color: white;
         }
 
       }
@@ -141,6 +142,11 @@ header {
     #select-continent {
       width: 150px;
       padding: 10px;
+
+      &.dark-mode {
+        background-color: $color-secondary-dark;
+        color: white;
+      }
       
     }
     
@@ -172,6 +178,11 @@ header {
         flex-direction: column;
         background-color: white;
         border-radius: 0 0 1rem 1rem;
+
+        &.dark-mode {
+          background-color: $color-secondary-dark;
+          color: white;
+        }
 
         h5 {
           padding: 5px 0;
@@ -215,6 +226,8 @@ header {
     display: inline;
     width: 100px;
 
+    
+
     i {
       margin-right: 10px;
     }
@@ -228,6 +241,11 @@ header {
       box-shadow: 4px 2px 2px 2px #aaaaaa;
       font-family: $font-primary;
       cursor: pointer;
+
+      &.dark-mode{
+        background-color: $color-secondary-dark;
+        color: white;
+      }
     }
   }
   
@@ -255,19 +273,29 @@ header {
       height: 300px;
       display: grid;
       padding: 15px;
+      
 
       #countryName {
         grid-column-start: 1;
         grid-column-end: 4;
+        padding: 0 15px;
       }
 
       .info-left {
         line-height: 30px;
+        padding: 15px;
       }
 
       .info-right{
         line-height: 30px;
+        padding: 15px;
       }
+
+    }
+
+    
+    .borders {
+      padding: 15px 28px;
     }
   }
 
