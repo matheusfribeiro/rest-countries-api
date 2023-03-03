@@ -25,6 +25,6 @@ This project was developed with HTML, CSS and Javascript. It is a list of countr
 
 ## Screenshots
 
-![Interface](design/restcountries1.png)
-![Info](design/restcountries2.png)
+![Interface](images/restcountries1.png)
+![Info](images/restcountries2.png)
 
