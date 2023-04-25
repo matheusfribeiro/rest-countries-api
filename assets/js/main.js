@@ -1,6 +1,5 @@
 import darkMode from "./darkMode.js"
 
-
 const countryList = document.querySelector('.countries')
 const selectContinent = document.querySelector('#select-continent')
 const searchInput = document.querySelector('#input-country')
@@ -9,14 +8,11 @@ const container = document.querySelector('.container')
 const countryModal = document.querySelector('.country-modal')
 const countryInfo = document.querySelector('.modal')
 
-
-
 const displayCountries = (countries) => {
 
 
   countries.forEach((country) => {
     const { population, region, capital, flags: { png }, name: { common } } = country
-
 
     countryList.innerHTML += `
         <div class ="country">
@@ -39,8 +35,6 @@ const displayCountries = (countries) => {
     })
   }
 
-
-
 }
 // FILTER COUNTRIES 
 searchInput.addEventListener('input', () => {
@@ -57,7 +51,6 @@ searchInput.addEventListener('input', () => {
 
   })
 })
-
 
 // SELECT BY REGION
 
@@ -81,7 +74,6 @@ selectContinent.addEventListener('change', function () {
 
 const showDetailedCountry = (text, countries) => {
 
-
   countries.forEach((country) => {
     const countryName = country.name.common
     
@@ -103,7 +95,6 @@ const showDetailedCountry = (text, countries) => {
         }
       }
   
-
       countryInfo.innerHTML += `
       <div class="country-flag">
       <img src="${png}" alt="">
